@@ -5,19 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP VUE</title>
+    <title>Eemlos para vue js iniciante</title>
     <script src="vue.js"> </script>
 </head>
 
 <body>
     <div id="app">
-        {{ mensagem }}
+        {{ mensagem }}<br>
+        {{ somar() }} <br>
+        {{ subtrair() }}<br>
+        {{ multiplicar () }} <br>
+        {{ dividir () }} <br>
+        {{ numeroAleatorio () }} <br>
     </div>
     <script>
         options = {
             el: '#app',
             data: {
                 mensagem: 'Primeiro template controlado pelo vue'
+            },
+            methods: {
+                somar: function somar() {
+                    //convencional
+                    return 4 + 2;
+                },
+                subtrair: function () {
+                    // forma anonima
+                    return 4 - 2;
+                },
+                multiplicar: () => {
+                    //arrow function
+                    4 * 2;
+                },
+                dividir() {
+                    //forma enxuta de definir os pares de chave/valor
+                    return 4 / 2;
+                },
+                numeroAleatorio: function numeroAleatorio() {
+                    return Math.random();
+                }
             }
         }
 
