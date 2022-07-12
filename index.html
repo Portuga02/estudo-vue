@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eemlos para vue js iniciante</title>
     <script src="vue.js"> </script>
+    <style>
+        .button {
+            text-decoration: none;
+        }
+        .negrito {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        <a v-bind:href="site"> site</a>
-        <p>Entendendo Diretas v-bind</p>
+        <button><a v-bind:href="site" class="button"> site</a> </button>
+        <!-- <a :href="site"> site</a> segunda forma de utilizar -->
+        <p class="negrito">Entendendo Diretas v-bind</p>
         <input type="text" name="" id="" v-bind:placeholder="ExemplopreenchimentoComBind" />
         <input type="checkbox" name="" id="" v-bind:checked="check">
     </div>
