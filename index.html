@@ -22,28 +22,29 @@
         options = {
             el: '#app',
             data: {
-                mensagem: 'Primeiro template controlado pelo vue'
+                mensagem: 'Primeiro template controlado pelo vue',
+                n1: 10,
+                n2: 5
             },
             methods: {
                 somar: function somar() {
                     //convencional
-                    return 4 + 2;
+                    return this.n1 + this.n2;
                 },
                 subtrair: function () {
                     // forma anonima
-                    return 4 - 2;
+                    return this.n1 - this.n2;
                 },
                 multiplicar: () => {
                     //arrow function
-                    4 * 2;
+                    // contexto lexico
+                    return this.n1 * this.n2;
                 },
                 dividir() {
                     //forma enxuta de definir os pares de chave/valor
-                    return 4 / 2;
+                    return this.n1 / this.n2;
                 },
-                numeroAleatorio: function numeroAleatorio() {
-                    return Math.random();
-                }
+
             }
         }
 
