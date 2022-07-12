@@ -29,12 +29,36 @@
         options = {
             el: '#app',
             data: {
+
                 site: 'https://www.bing.com/',
                 ExemplopreenchimentoComBind: 'Placeholder com diretivas v-bind',
                 check: true
 
             },
             methods: {
+
+                mensagem: 'Primeiro template controlado pelo vue',
+                n1: 10,
+                n2: 5
+            },
+            methods: {
+                somar: function somar() {
+                    //convencional
+                    return this.n1 + this.n2;
+                },
+                subtrair: function () {
+                    // forma anonima
+                    return this.n1 - this.n2;
+                },
+                multiplicar: () => {
+                    //arrow function
+                    // contexto lexico
+                    return this.n1 * this.n2;
+                },
+                dividir() {
+                    //forma enxuta de definir os pares de chave/valor
+                    return this.n1 / this.n2;
+                },
 
             }
         }
