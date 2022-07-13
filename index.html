@@ -8,22 +8,35 @@
     <title>Eemlos para vue js iniciante</title>
     <script src="vue.js"> </script>
     <style>
+        .tudo {
+            background: scroll;
+            background: -webkit-linear-gradient();
+            background-color: rgb(242, 243, 162);
+        }
+
         .button {
             text-decoration: none;
         }
+
         .negrito {
             font-weight: bold;
         }
     </style>
 </head>
 
-<body>
+<body class="tudo">
     <div id="app">
         <button><a v-bind:href="site" class="button"> site</a> </button>
         <!-- <a :href="site"> site</a> segunda forma de utilizar -->
         <p class="negrito">Entendendo Diretas v-bind</p>
         <input type="text" name="" id="" v-bind:placeholder="ExemplopreenchimentoComBind" />
         <input type="checkbox" name="" id="" v-bind:checked="check">
+
+
+        <H6>v-on</H6>
+
+        <input type="text" v-on:keyup="imprimirTexto()">
+        <button v-on:click="mensagemAlertaConsole()">botao abra no console</button>
     </div>
     <script>
         options = {
@@ -37,30 +50,17 @@
             },
             methods: {
 
-                mensagem: 'Primeiro template controlado pelo vue',
-                n1: 10,
-                n2: 5
-            },
-            methods: {
-                somar: function somar() {
-                    //convencional
-                    return this.n1 + this.n2;
+                imprimirTexto() {
+                    console.log('Mensagem de texto aqui');
                 },
-                subtrair: function () {
-                    // forma anonima
-                    return this.n1 - this.n2;
-                },
-                multiplicar: () => {
-                    //arrow function
-                    // contexto lexico
-                    return this.n1 * this.n2;
-                },
-                dividir() {
-                    //forma enxuta de definir os pares de chave/valor
-                    return this.n1 / this.n2;
+                mensagemAlertaConsole() {
+                    alert('Memsagem de alerta com diretas v-on')
                 },
 
-            }
+                mensagem: 'Primeiro template controlado pelo vue',
+                n1: 10,
+                n2: 5,
+            },
         }
 
         const vm = new Vue(options);
