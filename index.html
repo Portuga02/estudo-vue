@@ -7,21 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eemlos para vue js iniciante</title>
     <script src="vue.js"> </script>
+    <style>
+        .button {
+            text-decoration: none;
+        }
+        .negrito {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-        {{ mensagem }}<br>
-        {{ somar() }} <br>
-        {{ subtrair() }}<br>
-        {{ multiplicar () }} <br>
-        {{ dividir () }} <br>
-        {{ numeroAleatorio () }} <br>
+        <button><a v-bind:href="site" class="button"> site</a> </button>
+        <!-- <a :href="site"> site</a> segunda forma de utilizar -->
+        <p class="negrito">Entendendo Diretas v-bind</p>
+        <input type="text" name="" id="" v-bind:placeholder="ExemplopreenchimentoComBind" />
+        <input type="checkbox" name="" id="" v-bind:checked="check">
     </div>
     <script>
         options = {
             el: '#app',
             data: {
+
+                site: 'https://www.bing.com/',
+                ExemplopreenchimentoComBind: 'Placeholder com diretivas v-bind',
+                check: true
+
+            },
+            methods: {
+
                 mensagem: 'Primeiro template controlado pelo vue',
                 n1: 10,
                 n2: 5
