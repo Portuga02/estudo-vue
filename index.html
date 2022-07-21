@@ -34,8 +34,8 @@
 
 
         <H6>v-on</H6>
-
-        <input type="text" v-on:keyup="imprimirTexto()">
+        <!-- <input type="text" v-on:keyup="imprimirTexto()" /> -->
+        <input type="text" v-on:keyup="imprimirTexto('Enviado parametro, 5, xyz')" />
         <!-- <input type="text" @keyup="imprimirTexto()">  forma de abreviação e usar o v-on -->
         <button v-on:click="mensagemAlertaConsole()">botao abra no console</button>
     </div>
@@ -51,16 +51,17 @@
             },
             methods: {
 
-                imprimirTexto() {
-                    console.log('Mensagem de texto aqui');
+                imprimirTexto(t, n, x) {
+                    console.log(t);
+                    console.log(n);
+                    console.log(x);
                 },
                 mensagemAlertaConsole() {
                     alert('Memsagem de alerta com diretas v-on')
                 },
 
-                mensagem: 'Primeiro template controlado pelo vue',
-                n1: 10,
-                n2: 5,
+               
+              
             },
         }
 
