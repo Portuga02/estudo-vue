@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,37 +9,38 @@
     <title>Document</title>
     <style>
         .verde {
-            background-color:green
+            background-color: green
         }
+
         .branco {
-            background-color:white
+            background-color: white
         }
 
         .azul {
-            background-color:blue
+            background-color: blue
         }
-        
+
         .vermelho {
-            background-color:red
+            background-color: red
         }
 
         .borda {
-            border:1px solid
+            border: 1px solid
         }
 
         .div-principal {
-            width:200px;
-            height:200px
+            width: 200px;
+            height: 200px
         }
 
         .div-comum {
-            width:50px;
-            height:50px;
+            width: 50px;
+            height: 50px;
             display: inline-block;
         }
-        
     </style>
 </head>
+
 <body>
     <div id="app">
         <div class="borda div-principal" :class="cor">
@@ -49,10 +51,7 @@
         </div>
         <hr>
         <div @click="mudarCor('verde')" class="borda div-comum"></div>
-        <div 
-            class="borda div-comum" 
-            @mouseover="mudarCor('azul')" 
-            @mouseout="mudarCor('vermelho')">
+        <div class="borda div-comum" @mouseover="mudarCor('azul')" @mouseout="mudarCor('vermelho')">
         </div>
         <div class="borda div-comum" @mousemove="coordenadas($event)"></div>
     </div>
@@ -79,4 +78,5 @@
 
     </script>
 </body>
+
 </html>
